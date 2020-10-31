@@ -6,7 +6,7 @@ import io.ktor.routing.get
 private val userData = "{ \"users\": [\"Amber\", \"Collete\", \"Surge\", \"Gale\"] }"
 
 fun Routing.users() {
-    get("/users"){
+    get("/"){
         call.respondText(userData)
     }
 }
