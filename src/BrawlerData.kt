@@ -2,7 +2,8 @@ object BrawlerData {
 
     val amber = Brawler("Amber",
             "Legendary",
-            "https://drive.google.com/file/d/1qG9QhKYOnuAw8OlQpj_2iqctkqNePsX3/view?usp=sharing")
+//            "https://drive.google.com/file/d/1qG9QhKYOnuAw8OlQpj_2iqctkqNePsX3/view?usp=sharing"
+      "https://drive.google.com/uc?export=view&id=1qG9QhKYOnuAw8OlQpj_2iqctkqNePsX3")
 
     val leon = Brawler("Leon",
             "Legendary",
