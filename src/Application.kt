@@ -1,6 +1,7 @@
 package com.example.mehulapi
 
 import Brawler
+import BrawlerDetail
 import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.StatusPages
@@ -23,7 +24,7 @@ fun Application.module(testing: Boolean = false) {
     embeddedServer(Netty,port) {
         install(StatusPages) {
             exception<Throwable> { error ->
-                print("Exception Occured ${error.localizedMessage}")
+                print("Exception occurred ${error.localizedMessage}")
             }
         }
 
@@ -33,12 +34,87 @@ fun Application.module(testing: Boolean = false) {
             }
         }
 
+        val masterList = ArrayList<Brawler>()
+        BrawlerData.legendaryList.forEach {
+            masterList.add(it) }
+        BrawlerData.chromaticList.forEach {
+            masterList.add(it) }
+        BrawlerData.mythicList.forEach {
+            masterList.add(it) }
+        BrawlerData.epicList.forEach {
+            masterList.add(it) }
+        BrawlerData.superRareList.forEach {
+            masterList.add(it) }
+        BrawlerData.rareList.forEach {
+            masterList.add(it) }
+        BrawlerData.trophyRoadList.forEach {
+            masterList.add(it) }
+        masterList.add(BrawlerData.shelly)
+
+
+        val masterListPro = ArrayList<BrawlerDetail>()
+        BrawlerDetailData.legendaryListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.chromaticListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.mythicListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.epicListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.superRareListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.rareListDetail.forEach {
+            masterListPro.add(it) }
+        BrawlerDetailData.trophyRoadListDetail.forEach {
+            masterListPro.add(it) }
+        masterListPro.add(BrawlerDetailData.Shelly)
+
         routing {
-            get("/brawlerDetails") {
-
-                call.respond(BrawlerData.brawlers)
-
+            get("/allBrawlers") {
+                call.respond(masterList)
             }
+
+            get("/legendary") {
+                call.respond(BrawlerData.legendaryList)
+            }
+
+            get("/chromatic") {
+                call.respond(BrawlerData.chromaticList)
+            }
+
+            get("/mythic") {
+                call.respond(BrawlerData.mythicList)
+            }
+
+            get("/epic") {
+                call.respond(BrawlerData.epicList)
+            }
+
+            get("/superRare") {
+                call.respond(BrawlerData.superRareList)
+            }
+
+            get("/rare") {
+                call.respond(BrawlerData.rareList)
+            }
+
+            get("/trophyRoad") {
+                call.respond(BrawlerData.trophyRoadList)
+            }
+
+            for (brawler in masterList){
+                if(brawler.name != "8-Bit"){
+                get("/${brawler.name}") {
+                    call.respond(masterListPro.get(masterList.indexOf(brawler)))
+                }
+                }
+                else{
+                    get("/eightBit") {
+                        call.respond(masterListPro.get(masterList.indexOf(BrawlerData.eightBit)))
+                    }
+                }
+            }
+
         }
 
 
