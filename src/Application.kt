@@ -6,8 +6,10 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.StatusPages
 import io.ktor.jackson.jackson
+import io.ktor.request.receive
 import io.ktor.response.*
 import io.ktor.routing.get
+import io.ktor.routing.put
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
@@ -18,8 +20,9 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 @kotlin.jvm.JvmOverloads
 fun Application.module(testing: Boolean = false) {
 
-
     val port = System.getenv("PORT")?.toInt() ?: 8080
+
+    var brawlerChromatic : Brawler? = null
 
     embeddedServer(Netty,port) {
         install(StatusPages) {
@@ -112,6 +115,18 @@ fun Application.module(testing: Boolean = false) {
                     get("/eightBit") {
                         call.respond(masterListPro.get(masterList.indexOf(BrawlerData.eightBit)))
                     }
+                }
+            }
+
+            put("/chromatic") {
+                brawlerChromatic = call.receive<Brawler>()
+                brawlerChromatic?.let {
+                    val tempList = BrawlerData.chromaticList.toMutableList()
+                    tempList.add(brawlerChromatic!!)
+                    tempList.sortBy {
+                        it.name
+                    }
+                    BrawlerData.chromaticList = tempList
                 }
             }
 

@@ -171,26 +171,25 @@ object BrawlerData {
 
 
     //Starting Brawler (1)
-    val shelly = Brawler("Shelly",
+    var shelly = Brawler("Shelly",
             "Starting Brawler",
             "https://drive.google.com/uc?export=view&id=1rm2_AugaKQ4VYaGnrOOxbIrBJScuzg5V")
 
+    var legendaryList = listOf(amber, crow, leon, sandy, spike)
 
-    val legendaryList = listOf(amber, crow, leon, sandy, spike)
+    var chromaticList = listOf(colette, gale, surge)
 
-    val chromaticList = listOf(colette, gale, surge)
+    var mythicList = listOf(gene, max, mortis, mrP, sprout, tara)
 
-    val mythicList = listOf(gene, max, mortis, mrP, sprout, tara)
+    var epicList = listOf(bea, bibi, frank, pam, piper, nani)
 
-    val epicList = listOf(bea, bibi, frank, pam, piper, nani)
+    var superRareList = listOf(carl, darryl, jacky, penny, rico)
 
-    val superRareList = listOf(carl, darryl, jacky, penny, rico)
+    var rareList = listOf(barley, primo, poco, rosa)
 
-    val rareList = listOf(barley, primo, poco, rosa)
+    var trophyRoadList = listOf(bo, brock, bull, colt, dynamike, emz, jessie, nita, tick, eightBit)
 
-    val trophyRoadList = listOf(bo, brock, bull, colt, dynamike, emz, jessie, nita, tick, eightBit)
-
-    val startingBrawler = shelly
+    var startingBrawler = shelly
 
     //val brawlers = listOf<Brawler>()
 }
