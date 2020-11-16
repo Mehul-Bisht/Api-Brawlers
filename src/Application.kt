@@ -5,6 +5,7 @@ import BrawlerDetail
 import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.StatusPages
+import io.ktor.http.HttpStatusCode
 import io.ktor.jackson.jackson
 import io.ktor.request.receive
 import io.ktor.response.*
@@ -127,6 +128,7 @@ fun Application.module(testing: Boolean = false) {
                         it.name
                     }
                     BrawlerData.chromaticList = tempList
+                    call.respond(HttpStatusCode.OK)
                 }
             }
 
