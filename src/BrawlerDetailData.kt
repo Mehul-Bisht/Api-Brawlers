@@ -50,7 +50,13 @@ object BrawlerDetailData {
             "Chromatic",
             "https://drive.google.com/uc?export=view&id=1LbKD9itwmnQxnq4n5IRecHd9pItd__PS",
             "support",
-            "4720")
+            "5040")
+
+    val Lou = BrawlerDetail("Lou",
+            "Chromatic",
+            "https://drive.google.com/uc?export=view&id=1GbZiq8C_GW8j-E5aAuW1KhkQE_aXZZr8",
+            "support",
+            "4320")
 
 
     //Mythic (6)
@@ -90,8 +96,13 @@ object BrawlerDetailData {
             "sharpshooter",
             "4420")
 
+    val Byron = BrawlerDetail("Byron",
+            "Mythic",
+            "https://drive.google.com/uc?export=view&id=1KRUjL_Ghpj1n_K9wOJAOEEfvQaFgk8kJ",
+            "support",
+            "3500")
 
-    //Epic (6)
+    //Epic (7)
     val Piper = BrawlerDetail("Piper",
             "Epic",
             "https://drive.google.com/uc?export=view&id=159RG1u2I9QpkRjlFtHg9DG49Hqc2LGHi",
@@ -127,6 +138,12 @@ object BrawlerDetailData {
             "https://drive.google.com/uc?export=view&id=1HK3q1q_Jd-mwuSbiF53rw8cbmWqqdmU4",
             "sharpshooter",
             "3360")
+
+    val Edgar = BrawlerDetail("Edgar",
+            "Epic",
+            "https://drive.google.com/uc?export=view&id=1_h6xdETD_VYeEjhIZTGvXlPw1-ijSkeA",
+            "assassin",
+            "4200")
 
 
     //Super Rare (5)
@@ -259,11 +276,11 @@ object BrawlerDetailData {
 
     val legendaryListDetail = listOf(Amber, Crow, Leon, Sandy, Spike)
 
-    val chromaticListDetail = listOf(Colette, Gale, Surge)
+    val chromaticListDetail = listOf(Colette, Gale, Surge,Lou)
 
-    val mythicListDetail = listOf(Gene, Max, Mortis, MrP, Sprout, Tara)
+    val mythicListDetail = listOf(Byron, Gene, Max, Mortis, MrP, Sprout, Tara)
 
-    val epicListDetail = listOf(Bea, Bibi, Frank, Pam, Piper, Nani)
+    val epicListDetail = listOf(Bea, Bibi, Edgar, Frank, Pam, Piper, Nani)
 
     val superRareListDetail = listOf(Carl, Darryl, Jacky, Penny, Rico)
 

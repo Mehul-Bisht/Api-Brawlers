@@ -22,7 +22,7 @@ object BrawlerData {
             "https://drive.google.com/uc?export=view&id=19emFmBofuyJ3WVYhLs583nuk5NRyV41k")
 
 
-    //Chromatic (3)
+    //Chromatic (4)
     val colette = Brawler("Colette",
             "Chromatic",
             "https://drive.google.com/uc?export=view&id=1lUlnQL3prJA2ZynzXFA6vmQg9rPuHsJi")
@@ -35,8 +35,11 @@ object BrawlerData {
             "Chromatic",
             "https://drive.google.com/uc?export=view&id=1LbKD9itwmnQxnq4n5IRecHd9pItd__PS")
 
+    val lou = Brawler("Lou",
+            "Chromatic",
+            "https://drive.google.com/uc?export=view&id=1GbZiq8C_GW8j-E5aAuW1KhkQE_aXZZr8")
 
-    //Mythic (6)
+    //Mythic (7)
     val max = Brawler("Max",
             "Mythic",
             "https://drive.google.com/uc?export=view&id=1_7tR1JmIOIee55Ot11HSq4Wz-PYqQNd9")
@@ -61,8 +64,11 @@ object BrawlerData {
             "Mythic",
             "https://drive.google.com/uc?export=view&id=1NiP6Du0eAYFeok40rtMp0wvqiIkNVou9")
 
+    val byron = Brawler("Byron",
+            "Mythic",
+            "https://drive.google.com/uc?export=view&id=1KRUjL_Ghpj1n_K9wOJAOEEfvQaFgk8kJ")
 
-    //Epic (6)
+    //Epic (7)
     val piper = Brawler("Piper",
             "Epic",
             "https://drive.google.com/uc?export=view&id=159RG1u2I9QpkRjlFtHg9DG49Hqc2LGHi")
@@ -87,6 +93,9 @@ object BrawlerData {
             "Epic",
             "https://drive.google.com/uc?export=view&id=1HK3q1q_Jd-mwuSbiF53rw8cbmWqqdmU4")
 
+    val edgar = Brawler("Edgar",
+            "Epic",
+            "https://drive.google.com/uc?export=view&id=1_h6xdETD_VYeEjhIZTGvXlPw1-ijSkeA")
 
     //Super Rare (5)
     val carl = Brawler("Carl",
@@ -169,7 +178,6 @@ object BrawlerData {
             "Trophy road",
             "https://drive.google.com/uc?export=view&id=1sWPrTPGUBYURKjjgy4it3mZgzIsjSuon")
 
-
     //Starting Brawler (1)
     var shelly = Brawler("Shelly",
             "Starting Brawler",
@@ -177,11 +185,11 @@ object BrawlerData {
 
     var legendaryList = listOf(amber, crow, leon, sandy, spike)
 
-    var chromaticList = listOf(colette, gale, surge)
+    var chromaticList = listOf(colette, gale, surge, lou)
 
-    var mythicList = listOf(gene, max, mortis, mrP, sprout, tara)
+    var mythicList = listOf(byron, gene, max, mortis, mrP, sprout, tara)
 
-    var epicList = listOf(bea, bibi, frank, pam, piper, nani)
+    var epicList = listOf(bea, bibi, edgar, frank, pam, piper, nani)
 
     var superRareList = listOf(carl, darryl, jacky, penny, rico)
 
