@@ -2,6 +2,7 @@ package com.example.mehulapi
 
 import Brawler
 import BrawlerDetail
+import Numbers
 import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.StatusPages
@@ -75,35 +76,75 @@ fun Application.module(testing: Boolean = false) {
 
         routing {
             get("/allBrawlers") {
-                call.respond(masterList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "All Brawlers "
+                map["description"] = "Brawlers of all rarities"
+                map["brawlerCount"] = masterList.size
+                map["brawlers"] = masterList
+                call.respond(map)
             }
 
             get("/legendary") {
-                call.respond(BrawlerData.legendaryList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Legendary Brawlers "
+                map["description"] = "Brawlers of legendary rarity"
+                map["brawlerCount"] = BrawlerData.legendaryList.size
+                map["brawlers"] = BrawlerData.legendaryList
+                call.respond(map)
             }
 
             get("/chromatic") {
-                call.respond(BrawlerData.chromaticList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Chromatic Brawlers "
+                map["description"] = "Brawlers of chromatic rarity"
+                map["brawlerCount"] = BrawlerData.chromaticList.size
+                map["brawlers"] = BrawlerData.chromaticList
+                call.respond(map)
             }
 
             get("/mythic") {
-                call.respond(BrawlerData.mythicList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Mythic Brawlers "
+                map["description"] = "Brawlers of mythic rarity"
+                map["brawlerCount"] = BrawlerData.mythicList.size
+                map["brawlers"] = BrawlerData.mythicList
+                call.respond(map)
             }
 
             get("/epic") {
-                call.respond(BrawlerData.epicList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Epic Brawlers "
+                map["description"] = "Brawlers of epic rarity"
+                map["brawlerCount"] = BrawlerData.epicList.size
+                map["brawlers"] = BrawlerData.epicList
+                call.respond(map)
             }
 
             get("/superRare") {
-                call.respond(BrawlerData.superRareList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Super-Rare Brawlers "
+                map["description"] = "Brawlers of Super-Rare rarity"
+                map["brawlerCount"] = BrawlerData.superRareList.size
+                map["brawlers"] = BrawlerData.superRareList
+                call.respond(map)
             }
 
             get("/rare") {
-                call.respond(BrawlerData.rareList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Rare Brawlers "
+                map["description"] = "Brawlers of Rare rarity"
+                map["brawlerCount"] = BrawlerData.rareList.size
+                map["brawlers"] = BrawlerData.rareList
+                call.respond(map)
             }
 
             get("/trophyRoad") {
-                call.respond(BrawlerData.trophyRoadList)
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "Trophy Road Brawlers "
+                map["description"] = "Brawlers of Trophy Road rarity"
+                map["brawlerCount"] = BrawlerData.trophyRoadList.size
+                map["brawlers"] = BrawlerData.trophyRoadList
+                call.respond(map)
             }
 
             for (brawler in masterList){
@@ -132,6 +173,23 @@ fun Application.module(testing: Boolean = false) {
                 }
             }
 
+            get("/numbers") {
+                val one = Numbers(1,"one");
+                val two = Numbers(2,"two");
+                val three = Numbers(3,"three");
+                val four = Numbers(4,"four");
+                val five = Numbers(5,"five");
+                val six = Numbers(6,"six");
+                val subList = listOf(one,two,three,four,five,six);
+                val itemCount = subList.size;
+
+                val map = mutableMapOf<String,Any>()
+                map["title"] = "numbers"
+                map["description"] = "knowledge about numbers :)"
+                map["totalItems"] = itemCount as Integer
+                map["items"] = subList
+                call.respond(map)
+            }
         }
 
 
