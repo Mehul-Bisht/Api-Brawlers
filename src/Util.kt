@@ -8,7 +8,7 @@ class Util(private val call: ApplicationCall,
     private val request = call.request
     private val queryParameters: Parameters = request.queryParameters
     var page = 1
-    var perPage = 4
+    var perPage = 10
     val totalItems = List.size
     var endItems = 0
     var lastPage = 0
@@ -21,8 +21,8 @@ class Util(private val call: ApplicationCall,
 
         if (perPageParam != null && Integer.parseInt(perPageParam) > 0) {
             val i = Integer.parseInt(perPageParam)
-            if (i <= 10) perPage = i
-            // perPage max value = 10
+            if (i <= 15) perPage = i
+            // perPage max value = 15
         }
 
         if (pageParam != null && Integer.parseInt(pageParam) > 0) {
