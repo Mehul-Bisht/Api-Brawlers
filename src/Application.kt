@@ -165,7 +165,8 @@ fun Application.module(testing: Boolean = false) {
                 map["title"] = "All Brawlers "
                 map["description"] = "Brawlers of all rarities"
                 map["brawlerCount"] = masterList.size
-                map["brawlers"] = util.currentList
+                map["brawlers"] = if(util.shouldRespond) util.currentList else ArrayList<Brawler>()
+
                 call.respond(map)
 
             }

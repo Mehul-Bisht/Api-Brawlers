@@ -13,6 +13,7 @@ class Util(private val call: ApplicationCall,
     var endItems = 0
     var lastPage = 0
     val currentList = ArrayList<Brawler>()
+    var shouldRespond = true
 
     init {
 
@@ -32,8 +33,13 @@ class Util(private val call: ApplicationCall,
             val r = totalItems / perPage
             val maxPage = if (uncountedItems > 0) r + 1 else r
             lastPage = maxPage
-            if (i <= maxPage) page = i
+            if (i <= maxPage){
+                page = i
+                shouldRespond = true
+            }
             // calculate page max value
+            else
+                shouldRespond = false
         }
 
     }
