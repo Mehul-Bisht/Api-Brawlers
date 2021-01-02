@@ -1,5 +1,5 @@
 # Api-Brawlers
-Api using ktor with data for all the 40 brawlers in Brawl Stars. 
+Api using ktor with data for all the 43 brawlers in Brawl Stars. 
 
 ## query parameters:
 ```
