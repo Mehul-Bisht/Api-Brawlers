@@ -10,7 +10,7 @@ per_page
 ```
 
 ### default values:
-`page` = 1
+`page` = 1,  
 `per_page` =  10
 
 ## end points
