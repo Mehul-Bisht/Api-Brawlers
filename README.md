@@ -1,6 +1,18 @@
 # Api-Brawlers
 Api using ktor with data for all the 40 brawlers in Brawl Stars. 
 
+## query parameters:
+```
+page
+```
+```
+per_page
+```
+
+###default values:
+`page` = 1
+`per_page` =  10
+
 ## end points
 
 ### All Brawlers
